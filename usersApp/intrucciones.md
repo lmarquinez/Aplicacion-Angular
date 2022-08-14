@@ -14,10 +14,10 @@
       - Añadir HttpClientModule en app.module.ts
       - Constructor HttpClient y metodo getAll()
 
-3 - Rounting
+3 - Rounting ✅ 
 
-      1 - /home               - User-ListComponent
-      2 - /user/:iduser       - User-ViewComponent
+      1 - /home               - UserListComponent
+      2 - /user/:iduser       - UserViewComponent
       3 - /new-user           - FormComponent
       4 - /update/:iduser     - FormComponent
       5 - /**                 - Error404Component
