@@ -31,5 +31,16 @@ export class UsersService {
     return lastValueFrom(this.httpClient.get<any>(`${this.baseUrl}?page=${pPage}`))
   }
 
+  /**
+   * "Get the last value from the observable returned by the httpClient.get() method."
+   * 
+   * The httpClient.get() method returns an observable. The lastValueFrom() function takes an observable
+   * as an input and returns a promise. The promise resolves to the last value emitted by the observable
+   * @param {number} pId - number - the id of the entity to be retrieved
+   * @returns A promise of an object of type any.
+   */
+  getById(pId: number): Promise<any> {
+    return lastValueFrom(this.httpClient.get<any>(`${this.baseUrl}${pId}`))
+  }
 
 }

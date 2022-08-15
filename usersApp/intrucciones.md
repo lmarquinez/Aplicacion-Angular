@@ -43,8 +43,11 @@
 
       1 - Crear un @input para enviar el user del UserListComponent a UserCardComponent.
 
-8 - Pintar el usuario en la vista de UserViewComponent, recoger el parametro activo de la ruta es decir el id y hacer un consulta al servicios con ese id para obtener el usuario.
+8 - Pintar el usuario en la vista de UserViewComponent, recoger el parametro activo de la ruta es decir el id y hacer un consulta al servicios con ese id para obtener el usuario. ✅ 
 
+      1 - activatedRoute para recoger el parametro
+      2 - Crear en el servicio getById()
+      
 9 - Crear formulario para crear nuevos usuarios.
 
 10 - Funcion del boton UserCard para borrar usuarios.
