@@ -1,1 +1,33 @@
-<p>form works!</p>
+<section class="container m-5 p-5 bg-secondary rounded">
+    <!-- Displaying the value of the variable `type` -->
+    <h1>{{ type }} User</h1>
+    <!-- Creating a form with the name `userForm` and when the form is submitted, it will call the function
+    `getDataForm()` -->
+    <form [formGroup]="userForm" (ngSubmit)="getDataForm()" class="pt-3 px-5">
+
+        <div class="my-2">
+            <label for="first_name" class="form-label fw-bold">First Name: </label>
+            <input type="text" class="form-control" id="first_name" formControlName="first_name">
+        </div>
+        <div class="my-2">
+            <label for="last_name" class="form-label fw-bold">Last Name: </label>
+            <input type="text" class="form-control" id="last_name" formControlName="last_name">
+        </div>
+        <div class="my-2">
+            <label for="username" class="form-label fw-bold">Username: </label>
+            <input type="text" class="form-control" id="username" formControlName="username">
+        </div>
+        <div class="my-2">
+            <label for="email" class="form-label fw-bold">Email: </label>
+            <input type="text" class="form-control" id="dni" formControlName="email">
+        </div>
+        <div class="my-2">
+            <label for="image" class="form-label fw-bold">Image: </label>
+            <input type="text" class="form-control" id="image" formControlName="image">
+        </div>
+
+        <!-- Creating a button with the value of the variable `type` -->
+        <input type="submit" [value]="type" class="form-input-btn btn btn-primary mt-4" [disabled]="!userForm.valid">
+
+    </form>
+</section>

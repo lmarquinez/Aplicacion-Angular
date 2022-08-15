@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
+import { User } from '../interfaces/user.interface';
 
 
 @Injectable({
@@ -41,6 +42,20 @@ export class UsersService {
    */
   getById(pId: number): Promise<any> {
     return lastValueFrom(this.httpClient.get<any>(`${this.baseUrl}${pId}`))
+  }
+
+  /**
+   * It creates a new user by sending a POST request to the server
+   * @param {User} pUser - User: This is the user object that we want to create.
+   * @returns A promise of a user
+   */
+  create(pUser: User): Promise<User> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-type": "application/json",
+      }),
+    }
+    return lastValueFrom(this.httpClient.post<User>(this.baseUrl, pUser, httpOptions))
   }
 
 }

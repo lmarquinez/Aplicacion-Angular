@@ -48,9 +48,13 @@
       1 - activatedRoute para recoger el parametro
       2 - Crear en el servicio getById()
       
-9 - Crear formulario para crear nuevos usuarios.
+9 - Crear formulario para crear nuevos usuarios. ✅ 
 
-10 - Funcion del boton UserCard para borrar usuarios.
+      1 - Importar ReactiveFormsModule a app.module.ts
+      2 - getDataForm(), FormGroup, FormControl
+      3 - Metodo create en UsersService
+
+10 - Borrar usuarios.
 
       1 - Crear función delete() on UsersService
       2 - Añadir UsersService al constructor de UserCardComponent
