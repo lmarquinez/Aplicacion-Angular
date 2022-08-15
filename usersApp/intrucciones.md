@@ -34,6 +34,14 @@
 
 5 - Crear una maquetación responsive con bootstrap de header y footer, colocar los componentes trasversales. Y hacer funcionar la navegacion del menu. ✅ 
 
-6 - En el componente UserListComponent hacer una peticion al servicio y traerse los usuarios. Pintar los usuarios, con el componente UserCardComponent.  
+6 - En el componente UserListComponent hacer una peticion al servicio y traerse los usuarios. Hacer una paginación. ✅ 
 
-7 - Pintar el usuario en la vista de UserViewComponent, recoger el parametro activo de la ruta es decir el id y hacer un consulta al servicios con ese id para obtener el usuario.
+7- Pintar los usuarios, con el componente UserCardComponent.  
+
+8 - Pintar el usuario en la vista de UserViewComponent, recoger el parametro activo de la ruta es decir el id y hacer un consulta al servicios con ese id para obtener el usuario.
+
+9 - Crear formulario para crear nuevos usuarios.
+
+10 - Borrar usuarios
+
+11 - Actualizar usuarios.
