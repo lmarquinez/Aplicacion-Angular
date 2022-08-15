@@ -11,7 +11,8 @@
                             class="fa-solid fa-magnifying-glass"></i></button>
                     <button class="btn m-1 bg-warning" [routerLink]="['/update', myUser.id]"><i
                             class="fa-solid fa-arrows-rotate"></i></button>
-                    <button class="btn m-1 bg-danger text-white"><i class="fa-solid fa-trash"></i></button>
+                    <button class="btn m-1 bg-danger text-white" (click)="deleteUser(myUser.id)"><i
+                            class="fa-solid fa-trash"></i></button>
                 </div>
             </div>
         </div>
