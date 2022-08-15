@@ -49,4 +49,20 @@ export class UserViewComponent implements OnInit {
     this.actualTab = tab;
   }
 
+  /**
+   * If the user id is not undefined, then delete the user
+   * @param {number | undefined} pId - number | undefined
+   */
+  async deleteUser(pId: number | undefined) {
+    if (pId !== undefined) {
+      let response = await this.usersService.delete(pId)
+      let deleteUser = response;
+      if (deleteUser !== null) {
+        alert(`The user ${response.first_name} ${response.last_name} has been deleted successfully!`);
+      } else {
+        alert('There was an error deleting the user.');
+      }
+    }
+  }
+
 }

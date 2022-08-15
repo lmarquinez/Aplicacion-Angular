@@ -58,4 +58,14 @@ export class UsersService {
     return lastValueFrom(this.httpClient.post<User>(this.baseUrl, pUser, httpOptions))
   }
 
+  /**
+   * It returns a promise that resolves to the last value emitted by the observable returned by the
+   * httpClient.delete() function
+   * @param {number} pId - number - the id of the person to delete
+   * @returns A promise of any type.
+   */
+  delete(pId: number): Promise<any> {
+    return lastValueFrom(this.httpClient.delete<any>(`${this.baseUrl}${pId}`))
+  }
+
 }
