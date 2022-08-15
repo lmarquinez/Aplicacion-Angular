@@ -32,7 +32,7 @@ export class UserCardComponent implements OnInit {
       /* Calling the delete function in the users service and passing in the id of the user. */
       let response = await this.usersService.delete(pId)
       let deleteUser = response;
-      if (deleteUser !== null) {
+      if (deleteUser.id) {
         /* This is a template literal. It allows you to use variables in a string. */
         alert(`The user ${response.first_name} ${response.last_name} has been deleted successfully!`);
       } else {

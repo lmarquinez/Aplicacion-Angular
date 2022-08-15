@@ -57,7 +57,7 @@ export class UserViewComponent implements OnInit {
     if (pId !== undefined) {
       let response = await this.usersService.delete(pId)
       let deleteUser = response;
-      if (deleteUser !== null) {
+      if (deleteUser.id) {
         alert(`The user ${response.first_name} ${response.last_name} has been deleted successfully!`);
       } else {
         alert('There was an error deleting the user.');
