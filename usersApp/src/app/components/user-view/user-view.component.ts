@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -27,7 +29,8 @@ export class UserViewComponent implements OnInit {
    */
   constructor(
     private usersService: UsersService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -58,9 +61,53 @@ export class UserViewComponent implements OnInit {
       let response = await this.usersService.delete(pId)
       let deleteUser = response;
       if (deleteUser.id) {
-        alert(`The user ${response.first_name} ${response.last_name} has been deleted successfully!`);
+        /* This is a template literal. It allows you to use variables in a string. */
+        //alert(`The user ${response.first_name} ${response.last_name} has been deleted successfully!`);
+
+        /* A sweet alert. */
+        Swal.fire({
+          title: 'Are you sure you want to delete this user?',
+          icon: 'warning',
+          iconColor: '#d9534f',
+          width: '30%',
+          focusConfirm: true,
+          showCancelButton: true,
+          confirmButtonColor: '#0275d8',
+          cancelButtonColor: '#d9534f',
+          confirmButtonText: 'Delete',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire({
+              text: `The user ${response.first_name} ${response.last_name} has been deleted successfully!`,
+              icon: 'info',
+              iconColor: '#0275d8',
+              width: '50%',
+              showConfirmButton: false,
+              timer: 2500
+            });
+            this.router.navigate(['/home']);
+          } else {
+            Swal.fire({
+              text: 'You have cancel the operation',
+              icon: 'error',
+              iconColor: '#d9534f',
+              width: '50%',
+              showConfirmButton: false,
+              timer: 1500
+            });
+          }
+        });
+
       } else {
-        alert('There was an error deleting the user.');
+        Swal.fire({
+          text: 'There was an error deleting the user.',
+          icon: 'error',
+          iconColor: '#d9534f',
+          width: '50%',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        //alert('There was an error deleting the user.');
       }
     }
   }

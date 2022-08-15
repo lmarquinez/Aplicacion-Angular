@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form',
@@ -45,12 +46,28 @@ export class FormComponent implements OnInit {
     /* Checking if the response has an id. */
     if (response.id) {
       /* Showing an alert to the user. */
-      alert(`The user ${response.first_name} ${response.last_name} has been successfully created!`);
+      //alert(`The user ${response.first_name} ${response.last_name} has been successfully created!`);
+      Swal.fire({
+        text: `The user ${response.first_name} ${response.last_name} has been successfully created!`,
+        icon: 'info',
+        iconColor: '#0275d8',
+        width: '50%',
+        showConfirmButton: false,
+        timer: 2500
+      });
       /* Redirecting the user to the home page. */
       this.router.navigate(['/home']);
     } else {
+      Swal.fire({
+        text: 'There was an error. Please try again.',
+        icon: 'error',
+        iconColor: '#d9534f',
+        width: '50%',
+        showConfirmButton: false,
+        timer: 1500
+      });
       /* Showing an alert to the user. */
-      alert("There was an error. Please try again.");
+      //alert("There was an error. Please try again.");
     }
 
   }
