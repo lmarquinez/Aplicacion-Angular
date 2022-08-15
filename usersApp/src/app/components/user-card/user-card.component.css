@@ -1,0 +1,6 @@
+.card:hover {
+    width: 100%;
+    height: auto;
+    transform: scale(1.25);
+    transition: 1s;
+}

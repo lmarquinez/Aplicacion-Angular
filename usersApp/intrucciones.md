@@ -36,12 +36,17 @@
 
 6 - En el componente UserListComponent hacer una peticion al servicio y traerse los usuarios. Hacer una paginación. ✅ 
 
-7- Pintar los usuarios, con el componente UserCardComponent.  
+      1 - Al cargar la pagina (ngOnInit) llamar a usersService.getAll()
+      2 - Para la paginación, gotoPage()
 
-8 - Pintar el usuario en la vista de UserViewComponent, recoger el parametro activo de la ruta es decir el id y hacer un consulta al servicios con ese id para obtener el usuario.
+7- Pintar los usuarios, con el componente UserCardComponent. ✅ 
 
-9 - Crear formulario para crear nuevos usuarios.
+      1 - Crear un @input para enviar el user del UserListComponent a UserCardComponent.
 
-10 - Borrar usuarios
+8 - Funcion del boton UserCard para borrar usuarios.
+
+9 - Pintar el usuario en la vista de UserViewComponent, recoger el parametro activo de la ruta es decir el id y hacer un consulta al servicios con ese id para obtener el usuario.
+
+10 - Crear formulario para crear nuevos usuarios.
 
 11 - Actualizar usuarios.

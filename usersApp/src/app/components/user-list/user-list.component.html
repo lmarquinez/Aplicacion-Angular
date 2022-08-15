@@ -5,12 +5,12 @@
     <div class="row">
         <!-- A loop that will create a new `<article>` element for each user in the `arrUsers` array. -->
         <article class="col-12 col-md-6 col-lg-4" *ngFor="let user of arrUsers">
-            <app-user-card></app-user-card>
+            <app-user-card [myUser]="user"></app-user-card>
         </article>
 
     </div>
 
-    <div class="d-flex justify-content-center align-items-center mt-5">
+    <div class="d-flex justify-content-center align-items-center my-5">
         <!-- Creating a button that will call the `gotoPage()` function with the argument `currentPage - 1` when
         clicked. It will also disable the button if `currentPage === 1`. -->
         <button class="btn btn-dark mx-1" (click)="gotoPage(currentPage - 1)"
