@@ -13,11 +13,14 @@
     <div class="d-flex justify-content-center align-items-center my-5">
         <!-- Creating a button that will call the `gotoPage()` function with the argument `currentPage - 1` when
         clicked. It will also disable the button if `currentPage === 1`. -->
-        <button class="btn btn-dark mx-1" (click)="gotoPage(currentPage - 1)"
+        <button class="btn btn-dark mx-4" (click)="gotoPage(currentPage - 1)"
             [disabled]="currentPage === 1">Previous</button>
 
+        <span class="mx-2" *ngFor="let number of arrPages"
+            [ngClass]="{'currentActive': (number === currentPage)}">{{number}}</span>
+
         <!-- Creating a button that will call the gotoPage() function when clicked. -->
-        <button class="btn btn-dark mx-1" (click)="gotoPage(currentPage + 1)"
+        <button class="btn btn-dark mx-4" (click)="gotoPage(currentPage + 1)"
             [disabled]="currentPage === total_pages">Next</button>
     </div>
 

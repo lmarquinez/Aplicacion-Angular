@@ -11,6 +11,7 @@ export class UserListComponent implements OnInit {
 
   /* Creating an array of type User. */
   arrUsers: User[] = [];
+  arrPages: Number[] = [];
 
   /* Setting the default value of the currentPage to 0. */
   currentPage: number = 0;
@@ -27,8 +28,12 @@ export class UserListComponent implements OnInit {
   /**
    * The function is called when the component is initialized. It calls the gotoPage() function
    */
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.gotoPage();
+    let response = await this.usersService.getAll()
+    for (let index = 0; index < response.total_pages; index++) {
+      this.arrPages.push(index + 1);
+    }
   }
 
   /**
