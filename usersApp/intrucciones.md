@@ -14,15 +14,7 @@
       - Añadir HttpClientModule en app.module.ts
       - Constructor HttpClient y metodo getAll()
 
-3 - Rounting ✅ 
-
-      1 - /home               - UserListComponent
-      2 - /user/:iduser       - UserViewComponent
-      3 - /new-user           - FormComponent
-      4 - /update/:iduser     - FormComponent
-      5 - /**                 - Error404Component
-
-4 - Componentes ✅ 
+3 - Crear los componentes necesarios ✅ 
 
       1 - header
       2 - form
@@ -32,9 +24,17 @@
       6 - user-list
       7 - user-view
 
+4 - Crear las rutas ✅ 
+
+      1 - /home               - UserListComponent
+      2 - /user/:iduser       - UserViewComponent
+      3 - /new-user           - FormComponent
+      4 - /update/:iduser     - FormComponent
+      5 - /**                 - Error404Component
+
 5 - Crear una maquetación responsive con bootstrap, colocar los componentes trasversales. Y hacer funcionar la navegacion del menu.
 
-6 - En el componente User-ListComponent hacer una peticion al servicio y traerse los empleados.
+6 - En el componente User-ListComponent hacer una peticion al servicio y traerse los usuarios.
 
 7 - Pintar los usuarios, User-CardComponent.  
 
