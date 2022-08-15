@@ -43,10 +43,14 @@
 
       1 - Crear un @input para enviar el user del UserListComponent a UserCardComponent.
 
-8 - Funcion del boton UserCard para borrar usuarios.
+8 - Pintar el usuario en la vista de UserViewComponent, recoger el parametro activo de la ruta es decir el id y hacer un consulta al servicios con ese id para obtener el usuario.
 
-9 - Pintar el usuario en la vista de UserViewComponent, recoger el parametro activo de la ruta es decir el id y hacer un consulta al servicios con ese id para obtener el usuario.
+9 - Crear formulario para crear nuevos usuarios.
 
-10 - Crear formulario para crear nuevos usuarios.
+10 - Funcion del boton UserCard para borrar usuarios.
+
+      1 - Crear función delete() on UsersService
+      2 - Añadir UsersService al constructor de UserCardComponent
+      3 - Crear función deleteUser() on UserCardComponent
 
 11 - Actualizar usuarios.
