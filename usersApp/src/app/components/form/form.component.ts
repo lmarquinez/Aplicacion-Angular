@@ -28,10 +28,19 @@ export class FormComponent implements OnInit {
     /* Creating a new FormGroup object. */
     this.userForm = new FormGroup({
       /* Creating a new FormControl object. */
-      first_name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
-      last_name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
+      first_name: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3)
+      ]),
+      last_name: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3)
+      ]),
       username: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required, Validators.email]),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)
+      ]),
       image: new FormControl('', [Validators.required])
     });
   }
@@ -50,10 +59,10 @@ export class FormComponent implements OnInit {
         /* Creating a new FormGroup object. */
         this.userForm = new FormGroup({
           id: new FormControl(updateUser?.id, []),
-          first_name: new FormControl(updateUser?.first_name, [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
-          last_name: new FormControl(updateUser?.last_name, [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
+          first_name: new FormControl(updateUser?.first_name, [Validators.required, Validators.minLength(3)]),
+          last_name: new FormControl(updateUser?.last_name, [Validators.required, Validators.minLength(3)]),
           username: new FormControl(updateUser?.username, [Validators.required]),
-          email: new FormControl(updateUser?.email, [Validators.required]),
+          email: new FormControl(updateUser?.email, [Validators.required, Validators.pattern(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)]),
           image: new FormControl(updateUser?.image, [Validators.required])
         }, [])
       }
@@ -121,6 +130,14 @@ export class FormComponent implements OnInit {
       }
     }
 
+  }
+
+  checkControl(pControlName: string, pError: string): boolean {
+    if (this.userForm.get(pControlName)?.hasError(pError) && this.userForm.get(pControlName)?.touched) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 }

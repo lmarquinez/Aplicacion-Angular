@@ -8,22 +8,38 @@
         <div class="my-2">
             <label for="first_name" class="form-label fw-bold">First Name: </label>
             <input type="text" class="form-control" id="first_name" formControlName="first_name">
+            <p class="error" *ngIf="checkControl('first_name', 'required')">Required field</p>
+            <p class="text-warning" *ngIf="checkControl('first_name', 'minlength')">The length must be more thaan 3
+                characters.
+            </p>
         </div>
+
         <div class="my-2">
             <label for="last_name" class="form-label fw-bold">Last Name: </label>
             <input type="text" class="form-control" id="last_name" formControlName="last_name">
+            <p class="error" *ngIf="checkControl('last_name', 'required')">Required field</p>
+            <p class="text-warning" *ngIf="checkControl('last_name', 'minlength')">The length must be more than 3
+                characters.
+            </p>
         </div>
+
         <div class="my-2">
             <label for="username" class="form-label fw-bold">Username: </label>
             <input type="text" class="form-control" id="username" formControlName="username">
+            <p class="error" *ngIf="checkControl('username', 'required')">Required field</p>
         </div>
         <div class="my-2">
             <label for="email" class="form-label fw-bold">Email: </label>
             <input type="text" class="form-control" id="dni" formControlName="email">
+            <p class="error" *ngIf="checkControl('email', 'required')">Required field</p>
+            <p class="text-warning" *ngIf="checkControl('email', 'pattern')">The email is not correct
+                (xx@xx.xx).
+            </p>
         </div>
         <div class="my-2">
             <label for="image" class="form-label fw-bold">Image: </label>
             <input type="text" class="form-control" id="image" formControlName="image">
+            <p class="error" *ngIf="checkControl('image', 'required')">Required field</p>
         </div>
 
         <!-- Creating a button with the value of the variable `type` -->

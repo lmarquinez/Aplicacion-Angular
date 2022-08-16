@@ -1,0 +1,23 @@
+/*******VALDIATION*******/
+/* Changing the border color of the input field to red if the input is invalid and the user has touched
+the input field. */
+input.ng-invalid.ng-touched {
+    border-bottom: 3px solid #d9534f;
+}
+
+/* Changing the border color of the input field to green if the input is valid and the user has touched
+the input field. */
+input.ng-valid.ng-touched {
+    border-bottom: 3px solid rgb(18, 183, 18);
+}
+
+/* Styling the error message. */
+.error {
+    color: #d9534f;
+    font-size: 16px;
+}
+
+.warning {
+    color: #da9e11;
+    font-size: 16px;
+}

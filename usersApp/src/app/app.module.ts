@@ -11,24 +11,36 @@ import { UserCardComponent } from './components/user-card/user-card.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserViewComponent } from './components/user-view/user-view.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
+    /* Used to display the header. */
     HeaderComponent,
+    /* A component that is used to create a form. */
     FormComponent,
+    /* A component that is used to display a 404 error. */
     Error404Component,
+    /* A component that is used to display a card of users. */
     UserCardComponent,
+    /* A component that is used to display a list of users. */
     UserListComponent,
+    /* A component that is used to display the user view. */
     UserViewComponent,
+    /* A component that is used to display the footer. */
     FooterComponent
   ],
   imports: [
     BrowserModule,
+    /* A module that is used to create routes. */
     AppRoutingModule,
+    /* A module that is used to make HTTP requests. */
     HttpClientModule,
-    ReactiveFormsModule
+    /* A module that is used to create forms. */
+    ReactiveFormsModule,
+    /* A module that is used to create forms. */
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
