@@ -1,3 +1,4 @@
+<!-- A section of the HTML that contains the form. -->
 <section class="container m-5 p-5 bg-secondary rounded">
     <!-- Displaying the value of the variable `type` -->
     <h1>{{ type }} User</h1>
@@ -8,30 +9,35 @@
         <div class="my-2">
             <label for="first_name" class="form-label fw-bold">First Name: </label>
             <input type="text" class="form-control" id="first_name" formControlName="first_name">
+            <!-- Displaying an error message if the field is required. -->
             <p class="error" *ngIf="checkControl('first_name', 'required')">Required field</p>
+            <!-- Displaying a warning message if the length of the field is less than 3 characters. -->
             <p class="text-warning" *ngIf="checkControl('first_name', 'minlength')">The length must be more thaan 3
-                characters.
-            </p>
+                characters.</p>
         </div>
 
         <div class="my-2">
             <label for="last_name" class="form-label fw-bold">Last Name: </label>
             <input type="text" class="form-control" id="last_name" formControlName="last_name">
+            <!-- Displaying an error message if the field is required. -->
             <p class="error" *ngIf="checkControl('last_name', 'required')">Required field</p>
+            <!-- Displaying a warning message if the length of the field is less than 3 characters. -->
             <p class="text-warning" *ngIf="checkControl('last_name', 'minlength')">The length must be more than 3
-                characters.
-            </p>
+                characters. </p>
         </div>
 
         <div class="my-2">
             <label for="username" class="form-label fw-bold">Username: </label>
             <input type="text" class="form-control" id="username" formControlName="username">
+            <!-- Displaying an error message if the field is required. -->
             <p class="error" *ngIf="checkControl('username', 'required')">Required field</p>
         </div>
         <div class="my-2">
             <label for="email" class="form-label fw-bold">Email: </label>
             <input type="text" class="form-control" id="dni" formControlName="email">
+            <!-- Displaying an error message if the field is required. -->
             <p class="error" *ngIf="checkControl('email', 'required')">Required field</p>
+            <!-- Checking if the email is correct. -->
             <p class="text-warning" *ngIf="checkControl('email', 'pattern')">The email is not correct
                 (xx@xx.xx).
             </p>
@@ -39,6 +45,7 @@
         <div class="my-2">
             <label for="image" class="form-label fw-bold">Image: </label>
             <input type="text" class="form-control" id="image" formControlName="image">
+            <!-- Displaying an error message if the field is required. -->
             <p class="error" *ngIf="checkControl('image', 'required')">Required field</p>
         </div>
 

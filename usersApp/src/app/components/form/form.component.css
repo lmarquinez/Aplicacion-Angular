@@ -17,6 +17,7 @@ input.ng-valid.ng-touched {
     font-size: 16px;
 }
 
+/* Styling the warning message. */
 .warning {
     color: #da9e11;
     font-size: 16px;

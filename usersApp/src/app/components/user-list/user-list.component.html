@@ -1,24 +1,29 @@
+<!-- A section of the page that is a container with a margin top of 3. -->
 <section class="container mt-3">
+    <!-- Creating a header and a horizontal line. -->
     <h1>List of users</h1>
     <hr>
-
+    <!-- A bootstrap class that will make the elements inside it be displayed in a row. -->
     <div class="row">
         <!-- A loop that will create a new `<article>` element for each user in the `arrUsers` array. -->
         <article class="col-12 col-md-6 col-lg-4" *ngFor="let user of arrUsers">
+            <!-- Creating a new instance of the `<app-user-card>` component and passing the `user` variable to it. -->
             <app-user-card [myUser]="user"></app-user-card>
         </article>
 
     </div>
 
+    <!-- A bootstrap class that will make the elements inside it be displayed in a row. -->
     <div class="d-flex justify-content-center align-items-center my-5">
         <!-- Creating a button that will call the `gotoPage()` function with the argument `currentPage - 1` when
         clicked. It will also disable the button if `currentPage === 1`. -->
         <button class="btn btn-dark mx-4" (click)="gotoPage(currentPage - 1)"
             [disabled]="currentPage === 1">Previous</button>
-
+        <!-- Creating a span element for each number in the `arrPages` array. It is also adding the
+        `currentActive` class to the span element if the number is equal to the `currentPage`
+        variable. -->
         <span class="mx-2" *ngFor="let number of arrPages"
             [ngClass]="{'currentActive': (number === currentPage)}">{{number}}</span>
-
         <!-- Creating a button that will call the gotoPage() function when clicked. -->
         <button class="btn btn-dark mx-4" (click)="gotoPage(currentPage + 1)"
             [disabled]="currentPage === total_pages">Next</button>

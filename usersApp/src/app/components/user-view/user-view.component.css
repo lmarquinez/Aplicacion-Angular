@@ -1,4 +1,5 @@
 /********CARDS**********/
+/* Setting the background color of the card to a gray color. */
 .card {
     background-color: rgba(128, 128, 128, 0.661);
 }

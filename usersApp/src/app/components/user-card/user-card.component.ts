@@ -49,8 +49,11 @@ export class UserCardComponent implements OnInit {
           confirmButtonColor: '#0275d8',
           cancelButtonColor: '#d9534f',
           confirmButtonText: 'Delete',
+          /* A callback function. It is called when the user clicks on the delete button. */
         }).then((result) => {
+          /* Checking if the user has confirmed the delete operation. */
           if (result.isConfirmed) {
+            /* A sweet alert. */
             Swal.fire({
               text: `The user ${response.first_name} ${response.last_name} has been deleted successfully!`,
               icon: 'info',
@@ -60,6 +63,7 @@ export class UserCardComponent implements OnInit {
               timer: 2500
             });
           } else {
+            /* Displaying an alert to the user. */
             Swal.fire({
               text: 'You have cancel the operation',
               icon: 'error',
@@ -72,6 +76,7 @@ export class UserCardComponent implements OnInit {
         });
 
       } else {
+        /* A sweet alert. */
         Swal.fire({
           text: 'There was an error deleting the user.',
           icon: 'error',
@@ -80,8 +85,7 @@ export class UserCardComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         });
-        /* Displaying an alert to the user. */
-        //alert('There was an error deleting the user.');
+
       }
     }
   }

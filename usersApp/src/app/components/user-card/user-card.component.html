@@ -1,16 +1,28 @@
+<!-- A bootstrap class that creates a card with a margin bottom of 4. -->
 <div class="card mb-4">
+    <!-- A bootstrap class that makes the row have no margin. -->
     <div class="row g-0">
+        <!-- A bootstrap class that makes the column take up 4/12 of the screen. -->
         <div class="col-md-4">
+            <!-- Using the `myUser` object to get the image and first name. -->
             <img [src]="myUser.image" class="img-fluid rounded-start" [alt]="myUser.first_name">
         </div>
+        <!-- Making the column take up 8/12 of the screen. -->
         <div class="col-md-8">
+            <!-- A bootstrap class that creates a card body. -->
             <div class="card-body">
+                <!-- Using the `myUser` object to get the first and last name. -->
                 <h5 class="card-title text-center">{{ myUser.first_name }} {{myUser.last_name}}</h5>
+                <!-- Centering the buttons. -->
                 <div class="card-text d-flex justify-content-center">
+                    <!-- Creating a button that will take you to the user page. -->
                     <button class="btn m-1 bg-primary text-white" [routerLink]="['/user', myUser.id]"><i
                             class="fa-solid fa-magnifying-glass"></i></button>
+                    <!-- Creating a button that will take you to the update page. -->
                     <button class="btn m-1 bg-warning" [routerLink]="['/update', myUser.id]"><i
                             class="fa-solid fa-arrows-rotate"></i></button>
+                    <!-- This is a button that will call the `deleteUser` function and pass in the
+                    `myUser.id` as a parameter. -->
                     <button class="btn m-1 bg-danger text-white" (click)="deleteUser(myUser.id)"><i
                             class="fa-solid fa-trash"></i></button>
                 </div>

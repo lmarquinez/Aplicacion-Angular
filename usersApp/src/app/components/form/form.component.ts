@@ -90,6 +90,7 @@ export class FormComponent implements OnInit {
         /* Redirecting the user to the home page. */
         this.router.navigate(['/home']);
       } else {
+        /* Showing an alert to the user. */
         Swal.fire({
           text: 'There was an error. Please try again.',
           icon: 'error',
@@ -118,6 +119,7 @@ export class FormComponent implements OnInit {
         /* Redirecting the user to the home page. */
         this.router.navigate(['/home']);
       } else {
+        /* Showing an alert to the user. */
         Swal.fire({
           text: 'There was an error. Please try again.',
           icon: 'error',
@@ -132,7 +134,15 @@ export class FormComponent implements OnInit {
 
   }
 
+  /**
+   * If the control has the error and has been touched, return true, otherwise return false
+   * @param {string} pControlName - The name of the control you want to check.
+   * @param {string} pError - The error that we want to check for.
+   * @returns A boolean value.
+   */
   checkControl(pControlName: string, pError: string): boolean {
+    /* Checking if the control has the error and has been touched, if it does, it returns true, otherwise
+    it returns false. */
     if (this.userForm.get(pControlName)?.hasError(pError) && this.userForm.get(pControlName)?.touched) {
       return true;
     } else {

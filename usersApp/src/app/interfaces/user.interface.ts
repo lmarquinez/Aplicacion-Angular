@@ -1,3 +1,4 @@
+/* Defining the shape of the User object. */
 export interface User {
     id?: number;
     first_name: string;
