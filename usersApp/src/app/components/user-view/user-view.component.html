@@ -18,37 +18,43 @@
     </div>
 </section>
 
-<aside class="tabs my-5">
-    <nav>
-        <ul class="menu bg-primary">
-            <li [ngClass]="{ 'activo': actualTab === 'aboutme' }" (click)="chargeTab('aboutme')">About me</li>
-            <li [ngClass]="{ 'activo': actualTab === 'experience' }" (click)="chargeTab('experience')">
-                Experience</li>
-            <li [ngClass]="{ 'activo': actualTab === 'studies' }" (click)="chargeTab('studies')">Estudies</li>
-        </ul>
-    </nav>
-    <section *ngIf="actualTab === 'aboutme'">
-        <h3>About me</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quae deleniti perferendis numquam sit
-            blanditiis at. Nemo, molestiae? Possimus minus deserunt quaerat ex aliquid veniam incidunt ab obcaecati
-            voluptas quo?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolorem, adipisci laboriosam exercitationem
-            perferendis quod. Obcaecati dicta consequuntur incidunt pariatur similique illum ad officiis, et praesentium
-            assumenda est, tempora asperiores.</p>
-    </section>
-    <section *ngIf="actualTab === 'experience'">
-        <h3>Experience</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quae deleniti perferendis numquam sit
-            blanditiis at. Nemo, molestiae? Possimus minus deserunt quaerat ex aliquid veniam incidunt ab obcaecati
-            voluptas quo?</p>
-    </section>
-    <section *ngIf="actualTab === 'studies'">
-        <h3>Estudies</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quae deleniti perferendis numquam sit
-            blanditiis at. Nemo, molestiae? Possimus minus deserunt quaerat ex aliquid veniam incidunt ab obcaecati
-            voluptas quo?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolorem, adipisci laboriosam exercitationem
-            perferendis quod. Obcaecati dicta consequuntur incidunt pariatur similique illum ad officiis, et praesentium
-            assumenda est, tempora asperiores.</p>
-    </section>
+<aside class="container my-5">
+    <div class="tabs">
+        <nav>
+            <ul class="menu d-flex flex-column flex-lg-row bg-primary">
+                <li [ngClass]="{ 'activo': actualTab === 'aboutme' }" (click)="chargeTab('aboutme')">About me</li>
+                <li [ngClass]="{ 'activo': actualTab === 'experience' }" (click)="chargeTab('experience')">
+                    Experience</li>
+                <li [ngClass]="{ 'activo': actualTab === 'studies' }" (click)="chargeTab('studies')">Estudies</li>
+            </ul>
+        </nav>
+        <section *ngIf="actualTab === 'aboutme'">
+            <h3>About me</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quae deleniti perferendis numquam sit
+                blanditiis at. Nemo, molestiae? Possimus minus deserunt quaerat ex aliquid veniam incidunt ab obcaecati
+                voluptas quo?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolorem, adipisci laboriosam
+                exercitationem
+                perferendis quod. Obcaecati dicta consequuntur incidunt pariatur similique illum ad officiis, et
+                praesentium
+                assumenda est, tempora asperiores.</p>
+        </section>
+        <section *ngIf="actualTab === 'experience'">
+            <h3>Experience</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quae deleniti perferendis numquam sit
+                blanditiis at. Nemo, molestiae? Possimus minus deserunt quaerat ex aliquid veniam incidunt ab obcaecati
+                voluptas quo?</p>
+        </section>
+        <section *ngIf="actualTab === 'studies'">
+            <h3>Estudies</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quae deleniti perferendis numquam sit
+                blanditiis at. Nemo, molestiae? Possimus minus deserunt quaerat ex aliquid veniam incidunt ab obcaecati
+                voluptas quo?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolorem, adipisci laboriosam
+                exercitationem
+                perferendis quod. Obcaecati dicta consequuntur incidunt pariatur similique illum ad officiis, et
+                praesentium
+                assumenda est, tempora asperiores.</p>
+        </section>
+    </div>
 </aside>
