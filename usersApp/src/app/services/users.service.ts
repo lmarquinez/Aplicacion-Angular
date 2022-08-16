@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 import { User } from '../interfaces/user.interface';
 
@@ -29,7 +29,7 @@ export class UsersService {
    * @returns A promise of an array of objects.
    */
   getAll(pPage: number = 1): Promise<any> {
-    return lastValueFrom(this.httpClient.get<any>(`${this.baseUrl}?page=${pPage}`))
+    return lastValueFrom(this.httpClient.get<any>(`${this.baseUrl}?page=${pPage}`));
   }
 
   /**
@@ -41,7 +41,7 @@ export class UsersService {
    * @returns A promise of an object of type any.
    */
   getById(pId: number): Promise<any> {
-    return lastValueFrom(this.httpClient.get<any>(`${this.baseUrl}${pId}`))
+    return lastValueFrom(this.httpClient.get<any>(`${this.baseUrl}${pId}`));
   }
 
   /**
@@ -50,12 +50,7 @@ export class UsersService {
    * @returns A promise of a user
    */
   create(pUser: User): Promise<User> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        "Content-type": "application/json",
-      }),
-    }
-    return lastValueFrom(this.httpClient.post<User>(this.baseUrl, pUser, httpOptions))
+    return lastValueFrom(this.httpClient.post<User>(this.baseUrl, pUser));
   }
 
   /**
@@ -65,7 +60,16 @@ export class UsersService {
    * @returns A promise of any type.
    */
   delete(pId: number): Promise<any> {
-    return lastValueFrom(this.httpClient.delete<any>(`${this.baseUrl}${pId}`))
+    return lastValueFrom(this.httpClient.delete<any>(`${this.baseUrl}${pId}`));
+  }
+
+  /**
+   * It takes a user object, and returns a promise that resolves to the response from the server
+   * @param {User} pUser - User - The user object that we want to update.
+   * @returns The last value from the observable.
+   */
+  update(pUser: User): Promise<any> {
+    return lastValueFrom(this.httpClient.put<any>(`${this.baseUrl}${pUser.id}`, pUser));
   }
 
 }
