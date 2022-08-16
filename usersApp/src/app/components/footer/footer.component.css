@@ -3,3 +3,71 @@
     position: relative;
     bottom: 0;
 }
+
+/* ======================== */
+/* Making the icons display in a column and adding a gap of 25px between them. */
+.icons {
+    display: flex;
+    column-gap: 25px;
+}
+
+/* Setting the width and height of the icons to 40px, making them display in a row, aligning the items
+in the center, justifying the content in the center, removing the underline, setting the font size
+to 20px, setting the color to white, making the border radius 50%, setting the outline to 2px solid
+white, and setting the transition property to outline-offset, outline-color, and background-color. */
+.icon {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 50%;
+    outline: 2px solid #fff;
+    transition-property:
+        outline-offset, outline-color,
+        background-color;
+    transition-duration: .25s;
+}
+
+/* Making the outline of the icon move 4px when it is hovered over. */
+.icon:hover {
+    outline-offset: 4px;
+}
+
+/* This is making the icons shake when they are hovered over. */
+.icon:hover i {
+    animation: shake .25s;
+}
+
+/* This is changing the background color and outline color of the icons when they are hovered over. */
+.icon--linkedin:hover {
+    background-color: #0077b5;
+    outline-color: #0077b5;
+}
+
+.icon--github:hover {
+    background-color: #2ea44f;
+    outline-color: #2ea44f;
+}
+
+/* Rotating the icons. */
+@keyframes shake {
+    10% {
+        transform: rotate(15deg);
+    }
+
+    20% {
+        transform: rotate(-15deg);
+    }
+
+    30% {
+        transform: rotate(15deg);
+    }
+
+    40% {
+        transform: rotate(-15deg);
+    }
+}
