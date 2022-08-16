@@ -22,3 +22,60 @@ input.ng-valid.ng-touched {
     color: #da9e11;
     font-size: 16px;
 }
+
+/* ======================== */
+/* Making the label relative to the input. */
+.input-group {
+    position: relative;
+}
+
+/* Setting the label to be absolute, and then setting the top and left to be -30px and -26px
+respectively. */
+label {
+    position: absolute;
+    top: -30px;
+    left: -26px;
+    line-height: 16px;
+    display: inline-flex;
+    column-gap: 10px;
+    align-items: center;
+    transition: transform .25s,
+        opacity .25s;
+}
+
+/* Adding a border to the label. */
+label::before {
+    border-bottom: solid 1px #000000;
+    opacity: 0;
+}
+
+/* Moving the label to the right by 26px. */
+.input-group:focus-within label {
+    transform: translateX(26px);
+}
+
+/* Making the label visible when the input is focused. */
+.input-group:focus-within label::before {
+    opacity: 1;
+    transition-delay: .1s;
+}
+
+/* Styling the input field. */
+input {
+    display: block;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font: inherit;
+}
+
+/* Making the placeholder disappear when the input is focused. */
+input::placeholder {
+    transition: opacity .25s;
+}
+
+/* Making the placeholder disappear when the input is focused. */
+input:focus::placeholder {
+    opacity: 0;
+}

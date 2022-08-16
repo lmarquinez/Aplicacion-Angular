@@ -1,14 +1,17 @@
 <!-- A section of the HTML that contains the form. -->
-<section class="container m-5 p-5 bg-secondary rounded">
+<section class="container my-2 p-5 bg-secondary rounded">
     <!-- Displaying the value of the variable `type` -->
     <h1>{{ type }} User</h1>
     <!-- Creating a form with the name `userForm` and when the form is submitted, it will call the function
     `getDataForm()` -->
     <form [formGroup]="userForm" (ngSubmit)="getDataForm()" class="pt-3 px-5">
 
-        <div class="my-2">
-            <label for="first_name" class="form-label fw-bold">First Name: </label>
-            <input type="text" class="form-control" id="first_name" formControlName="first_name">
+        <div class="my-5">
+            <div class="input-group">
+                <label for="first_name" class="form-label fw-bold">First Name: </label>
+                <input type="text" class="form-control" id="first_name" placeholder="Laura"
+                    formControlName="first_name">
+            </div>
             <!-- Displaying an error message if the field is required. -->
             <p class="error" *ngIf="checkControl('first_name', 'required')">Required field</p>
             <!-- Displaying a warning message if the length of the field is less than 3 characters. -->
@@ -16,9 +19,12 @@
                 characters.</p>
         </div>
 
-        <div class="my-2">
-            <label for="last_name" class="form-label fw-bold">Last Name: </label>
-            <input type="text" class="form-control" id="last_name" formControlName="last_name">
+        <div class="my-5">
+            <div class="input-group">
+                <label for="last_name" class="form-label fw-bold">Last Name: </label>
+                <input type="text" class="form-control" id="last_name" placeholder="Marquinez"
+                    formControlName="last_name">
+            </div>
             <!-- Displaying an error message if the field is required. -->
             <p class="error" *ngIf="checkControl('last_name', 'required')">Required field</p>
             <!-- Displaying a warning message if the length of the field is less than 3 characters. -->
@@ -26,25 +32,34 @@
                 characters. </p>
         </div>
 
-        <div class="my-2">
-            <label for="username" class="form-label fw-bold">Username: </label>
-            <input type="text" class="form-control" id="username" formControlName="username">
+        <div class="my-5">
+            <div class="input-group">
+                <label for="username" class="form-label fw-bold">Username: </label>
+                <input type="text" class="form-control" id="username" placeholder="lauri4" formControlName="username">
+            </div>
             <!-- Displaying an error message if the field is required. -->
             <p class="error" *ngIf="checkControl('username', 'required')">Required field</p>
         </div>
-        <div class="my-2">
-            <label for="email" class="form-label fw-bold">Email: </label>
-            <input type="text" class="form-control" id="dni" formControlName="email">
+
+        <div class="my-5">
+            <div class="input-group">
+                <label for="email" class="form-label fw-bold">Email: </label>
+                <input type="text" class="form-control" id="email" placeholder="email@domain.com"
+                    formControlName="email">
+            </div>
             <!-- Displaying an error message if the field is required. -->
             <p class="error" *ngIf="checkControl('email', 'required')">Required field</p>
             <!-- Checking if the email is correct. -->
-            <p class="text-warning" *ngIf="checkControl('email', 'pattern')">The email is not correct
-                (xx@xx.xx).
+            <p class="text-warning" *ngIf="checkControl('email', 'pattern')">The email is incorrect.
             </p>
         </div>
-        <div class="my-2">
-            <label for="image" class="form-label fw-bold">Image: </label>
-            <input type="text" class="form-control" id="image" formControlName="image">
+
+        <div class="my-5">
+            <div class="input-group">
+                <label for="image" class="form-label fw-bold">Image: </label>
+                <input type="text" class="form-control" id="image" placeholder="wwww.google.com/image/35235"
+                    formControlName="image">
+            </div>
             <!-- Displaying an error message if the field is required. -->
             <p class="error" *ngIf="checkControl('image', 'required')">Required field</p>
         </div>
