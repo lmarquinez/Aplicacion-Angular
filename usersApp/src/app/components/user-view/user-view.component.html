@@ -10,9 +10,9 @@
                 <p>Email: <a [href]=" 'mailto:' + myUser?.email "> <span
                             class="fw-bold p-2">{{myUser?.email}}</span></a>
                 </p>
-                <button class="btn btn-danger mt-2 mx-2" (click)="deleteUser(myUser.id)"
-                    [routerLink]="['/home']">Delete</button>
-                <button class="btn btn-dark mt-2" [routerLink]="['/home']">Back to the list</button>
+                <button class="btn btn-danger mt-5 mx-2" (click)="deleteUser(myUser?.id)">Delete</button>
+                <button class="btn btn-primary mt-5 mx-2" [routerLink]="['/update', myUser?.id]">Update</button>
+                <button class="btn btn-dark mt-5 mx-2" [routerLink]="['/home']">Back to the list</button>
             </div>
         </div>
     </div>
