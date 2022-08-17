@@ -72,7 +72,9 @@ input {
 
 /* Making the placeholder disappear when the input is focused. */
 input::placeholder {
+    color: rgb(199, 216, 248);
     transition: opacity .25s;
+    font-style: italic;
 }
 
 /* Making the placeholder disappear when the input is focused. */

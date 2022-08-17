@@ -39,7 +39,7 @@ export class FormComponent implements OnInit {
       username: new FormControl('', [Validators.required]),
       email: new FormControl('', [
         Validators.required,
-        Validators.pattern(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)
+        Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$/)
       ]),
       image: new FormControl('', [Validators.required])
     });
@@ -62,7 +62,7 @@ export class FormComponent implements OnInit {
           first_name: new FormControl(updateUser?.first_name, [Validators.required, Validators.minLength(3)]),
           last_name: new FormControl(updateUser?.last_name, [Validators.required, Validators.minLength(3)]),
           username: new FormControl(updateUser?.username, [Validators.required]),
-          email: new FormControl(updateUser?.email, [Validators.required, Validators.pattern(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)]),
+          email: new FormControl(updateUser?.email, [Validators.required, Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$/)]),
           image: new FormControl(updateUser?.image, [Validators.required])
         }, [])
       }
