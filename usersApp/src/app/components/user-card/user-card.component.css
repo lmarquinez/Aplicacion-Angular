@@ -5,3 +5,12 @@
     transform: scale(1.15);
     transition: 1s ease;
 }
+
+/* Making the button have a black border when you hover over it. */
+.btn {
+    transition: 1s ease;
+}
+
+.btn:hover {
+    border: solid 1px #000000
+}

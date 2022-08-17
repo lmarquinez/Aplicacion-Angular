@@ -81,7 +81,7 @@ export class FormComponent implements OnInit {
       if (responseUpdate.id) {
         Swal.fire({
           text: `The user ${responseUpdate.first_name} ${responseUpdate.last_name} has been successfully updated!`,
-          icon: 'info',
+          icon: 'success',
           iconColor: '#0275d8',
           width: '50%',
           showConfirmButton: false,
@@ -110,7 +110,7 @@ export class FormComponent implements OnInit {
         /* Showing an alert to the user. */
         Swal.fire({
           text: `The user ${responseCreate.first_name} ${responseCreate.last_name} has been successfully created!`,
-          icon: 'info',
+          icon: 'success',
           iconColor: '#0275d8',
           width: '50%',
           showConfirmButton: false,

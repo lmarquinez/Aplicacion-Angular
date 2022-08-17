@@ -61,9 +61,6 @@ export class UserViewComponent implements OnInit {
       let response = await this.usersService.delete(pId)
       let deleteUser = response;
       if (deleteUser.id) {
-        /* This is a template literal. It allows you to use variables in a string. */
-        //alert(`The user ${response.first_name} ${response.last_name} has been deleted successfully!`);
-
         /* A sweet alert. */
         Swal.fire({
           title: 'Are you sure you want to delete this user?',
@@ -79,7 +76,7 @@ export class UserViewComponent implements OnInit {
           if (result.isConfirmed) {
             Swal.fire({
               text: `The user ${response.first_name} ${response.last_name} has been deleted successfully!`,
-              icon: 'info',
+              icon: 'success',
               iconColor: '#0275d8',
               width: '50%',
               showConfirmButton: false,
@@ -107,7 +104,6 @@ export class UserViewComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         });
-        //alert('There was an error deleting the user.');
       }
     }
   }

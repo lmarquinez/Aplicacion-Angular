@@ -12,6 +12,7 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { UserViewComponent } from './components/user-view/user-view.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserPopupComponent } from './components/user-popup/user-popup.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     /* A component that is used to display the user view. */
     UserViewComponent,
     /* A component that is used to display the footer. */
-    FooterComponent
+    FooterComponent,
+    UserPopupComponent
   ],
   imports: [
     BrowserModule,

@@ -56,7 +56,7 @@ export class UserCardComponent implements OnInit {
             /* A sweet alert. */
             Swal.fire({
               text: `The user ${response.first_name} ${response.last_name} has been deleted successfully!`,
-              icon: 'info',
+              icon: 'success',
               iconColor: '#0275d8',
               width: '50%',
               showConfirmButton: false,

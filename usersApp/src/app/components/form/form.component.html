@@ -9,7 +9,7 @@
         <div class="my-5">
             <div class="input-group">
                 <label for="first_name" class="form-label fw-bold">First Name: </label>
-                <input type="text" class="form-control" id="first_name" placeholder="Laura"
+                <input type="text" class="form-control rounded" id="first_name" placeholder="Laura"
                     formControlName="first_name">
             </div>
             <!-- Displaying an error message if the field is required. -->
@@ -22,7 +22,7 @@
         <div class="my-5">
             <div class="input-group">
                 <label for="last_name" class="form-label fw-bold">Last Name: </label>
-                <input type="text" class="form-control" id="last_name" placeholder="Marquinez"
+                <input type="text" class="form-control rounded" id="last_name" placeholder="Marquinez"
                     formControlName="last_name">
             </div>
             <!-- Displaying an error message if the field is required. -->
@@ -35,7 +35,8 @@
         <div class="my-5">
             <div class="input-group">
                 <label for="username" class="form-label fw-bold">Username: </label>
-                <input type="text" class="form-control" id="username" placeholder="lauri4" formControlName="username">
+                <input type="text" class="form-control rounded" id="username" placeholder="lauri4"
+                    formControlName="username">
             </div>
             <!-- Displaying an error message if the field is required. -->
             <p class="error" *ngIf="checkControl('username', 'required')">Required field</p>
@@ -44,7 +45,7 @@
         <div class="my-5">
             <div class="input-group">
                 <label for="email" class="form-label fw-bold">Email: </label>
-                <input type="text" class="form-control" id="email" placeholder="email@domain.com"
+                <input type="text" class="form-control rounded" id="email" placeholder="email@domain.com"
                     formControlName="email">
             </div>
             <!-- Displaying an error message if the field is required. -->
@@ -57,7 +58,7 @@
         <div class="my-5">
             <div class="input-group">
                 <label for="image" class="form-label fw-bold">Image: </label>
-                <input type="text" class="form-control" id="image" placeholder="wwww.google.com/image/35235"
+                <input type="text" class="form-control rounded" id="image" placeholder="wwww.google.com/image/35235"
                     formControlName="image">
             </div>
             <!-- Displaying an error message if the field is required. -->
